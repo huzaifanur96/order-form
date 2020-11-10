@@ -121,6 +121,66 @@
               {{ form_widget(form.deceasedDateOfDeath, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
             </div>
           </div>
+          {# Interment Information #}
+          <div class="flex flex-wrap">
+            <div class="w-full px-3">
+              {{ form_label(form.deceasedIntermentInformation, 'Interment Information', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.deceasedIntermentInformation, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+        </div>
+
+        {# separator #}
+        <hr class="mb-4 mt-4 mx-3" />
+
+        {# family information #}
+        <div>
+          {# Family Contact Name #}
+          <div class="flex flex-wrap">
+            <div class="w-full px-3">
+              {{ form_label(form.familyContactName, 'Name of Family Contact', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactName, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+          {# street #}
+          <div class="flex">
+            <div class="w-full px-3">
+            {{ form_label(form.familyContactStreet, 'Street', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactStreet, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+          {# Family City, State, Zip #}
+          <div class="flex flex-wrap">
+            {# City #}
+            <div class="w-full md:w-1/3 px-3">
+              {{ form_label(form.familyContactCity, 'City', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactCity, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+            {# State #}
+            <div class="w-full md:w-1/3 px-3">
+              {{ form_label(form.familyContactState, 'State', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactState, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              {# TODO: add dropdown icon #}
+            </div>
+            {#  Zip #}
+            <div class="w-full md:w-1/3 px-3">
+              {{ form_label(form.familyContactZip, 'Zip', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactZip, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+          {# Family contact Telephone, Email #}
+          <div class="flex flex-wrap">
+            {# Telephone #}
+            <div class="w-full md:w-1/2 px-3">
+              {{ form_label(form.familyContactTelephone, 'Telephone', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactTelephone, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+            {#  Email #}
+            <div class="w-full md:w-1/2 px-3">
+              {{ form_label(form.familyContactEmail, 'Email', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.familyContactEmail, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
         </div>
 
       </div>
