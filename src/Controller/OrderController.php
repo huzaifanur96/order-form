@@ -24,10 +24,22 @@ class OrderController extends AbstractController
         $form->handleRequest($request);
 
         // check form submission
-        if ($form->isSubmitted()) {return $this->render('order_form/index.html.twig', [
-            'form' => $form->createView(),
-        ]);
-            // TODO
+        if ($form->isSubmitted()) {
+
+            // get form data
+            $order_form_data = $form->getData();
+            $order->setFuneralHome($order_form_data->getFuneralHome());
+
+            // Persist data
+            $entityManager = $this->getDoctrine()->getManager();
+            $entityManager->persist($order);
+            $entityManager->flush();
+
+            // success form
+            return $this->redirectToRoute('order_form_confirm', [
+                'order_id' => $order_form_data->getId(),
+            ]);
+
         }
 
         return $this->render('order_form/index.html.twig', [
