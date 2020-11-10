@@ -21,12 +21,12 @@ class Order
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $funeralHome;
+    private $funeralHomeName;
 
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $contact;
+    private $funeralHomeContact;
 
     /**
      * @ORM\Column(type="date")
@@ -73,26 +73,26 @@ class Order
         return $this->id;
     }
 
-    public function getFuneralHome(): ?string
+    public function getFuneralHomeName(): ?string
     {
-        return $this->funeralHome;
+        return $this->funeralHomeName;
     }
 
-    public function setFuneralHome(string $funeralHome): self
+    public function setFuneralHomeName(string $funeralHomeName): self
     {
-        $this->funeralHome = $funeralHome;
+        $this->funeralHomeName = $funeralHomeName;
 
         return $this;
     }
 
-    public function getContact(): ?string
+    public function getFuneralHomeContact(): ?string
     {
-        return $this->contact;
+        return $this->funeralHomeContact;
     }
 
-    public function setContact(string $contact): self
+    public function setFuneralHomeContact(string $funeralHomeContact): self
     {
-        $this->contact = $contact;
+        $this->funeralHomeContact = $funeralHomeContact;
 
         return $this;
     }

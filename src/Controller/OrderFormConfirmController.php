@@ -23,7 +23,7 @@ class OrderFormConfirmController extends AbstractController
         }
 
         return $this->render('order_form_confirm/index.html.twig', [
-            'funeral_home_name' => $order->getFuneralHome(),
+            'funeral_home_name' => $order->getFuneralHomeName(),
         ]);
     }
 }

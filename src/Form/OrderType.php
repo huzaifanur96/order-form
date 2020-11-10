@@ -17,9 +17,11 @@ class OrderType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('funeralHome', TextType::class)
-            ->add('contact', TextType::class)
-            ->add('funeralHomeDate', DateType::class)
+            ->add('funeralHomeName', TextType::class)
+            ->add('funeralHomeContact', TextType::class)
+            ->add('funeralHomeDate', DateType::class, [
+                'widget' => 'single_text',
+            ])
             ->add('funeralHomeStreet', TextType::class)
             ->add('funeralHomeCity', TextType::class)
             ->add('funeralHomeState', ChoiceType::class, [
@@ -37,6 +39,8 @@ class OrderType extends AbstractType
                     'Funeral Director' => 'Funeral Director',
                     'Family of Deceased' => 'Family of Deceased',
                 ],
+                'expanded' => true,
+                'multiple' => false,
             ])
             ->add('submit', SubmitType::class)
         ;

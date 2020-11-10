@@ -5,5 +5,100 @@
 {% endblock %}
 
 {% block body %}
-  {{ form(form) }}
+  <div class="container mx-auto">
+    {# header #}
+    <!-- BETA tag -->
+    <div class="mt-2 mb-8 text-right">
+      <small style="background-color:#f8fafc; opacity: 72%;"
+        class="border-2 rounded-xl border-gray-200 text-xs text-gray-700 px-3 py-1">
+        Beta
+      </small>
+    </div>
+    <h1 class="text-5xl mt-6 text-center font-semibold">
+      Honoring A Life
+    </h1>
+    <h2 class="text-3xl text-center">
+      Order Form
+    </h2>
+
+    {# form #}
+    {{ form_start(form) }}
+    {# overall form errors #}
+    {{ form_errors(form) }}
+
+    <!-- Priliminary information -->
+    <div>
+      <!-- funeral home -->
+      <div id="funeral-home">
+        {# Name, Contact, Date #}
+        <div class="flex flex-wrap">
+          {# Name #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeName, 'Funeral Home', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeName, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+          {# Contact #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeContact, 'Contact', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeContact, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+          {#  Date #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeDate, 'Date', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeDate, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+        </div>
+        <!-- street -->
+        <div class="flex">
+          <div class="w-full px-3">
+          {{ form_label(form.funeralHomeStreet, 'Street', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeStreet, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+        </div>
+        {# City, State, Zip #}
+        <div class="flex flex-wrap">
+          {# Name #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeCity, 'City', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeCity, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+          {# State #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeState, 'State', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeState, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            {# TODO: add dropdown icon #}
+          </div>
+          {#  Zip #}
+          <div class="w-full md:w-1/3 px-3">
+            {{ form_label(form.funeralHomeZip, 'Zip', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeZip, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+        </div>
+        {# Telephone, Email #}
+        <div class="flex flex-wrap">
+          {# Telephone #}
+          <div class="w-full md:w-1/2 px-3">
+            {{ form_label(form.funeralHomeTelephone, 'Telephone', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeTelephone, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+          {#  Email #}
+          <div class="w-full md:w-1/2 px-3">
+            {{ form_label(form.funeralHomeEmail, 'Email', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeEmail, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+          </div>
+        </div>
+        {# Ship Merchandise to #}
+        <div class="flex flex-wrap">
+          {# ShipMerchandiseTo #}
+          <div class="w-full md:w-1/2 px-3">
+            {{ form_label(form.funeralHomeShipMerchandiseTo, 'ShipMerchandiseTo', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+            {{ form_widget(form.funeralHomeShipMerchandiseTo) }}
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    {{ form_end(form) }}
+  </div>
 {% endblock %}

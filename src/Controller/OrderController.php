@@ -28,7 +28,7 @@ class OrderController extends AbstractController
 
             // get form data
             $order_form_data = $form->getData();
-            $order->setFuneralHome($order_form_data->getFuneralHome());
+            $order->setFuneralHomeName($order_form_data->getFuneralHomeName());
 
             // Persist data
             $entityManager = $this->getDoctrine()->getManager();
