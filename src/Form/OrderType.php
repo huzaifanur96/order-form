@@ -122,6 +122,32 @@ class OrderType extends AbstractType
             ])
             ->add('remPorPhoto', FileType::class)
             ->add('remPorSpecialInstructions', TextareaType::class)
+            ->add('memPraCarQuantity', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('memPraCarStyle', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('memPraCarVerse', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('memPraCarInk', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('memPraCarPaper', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('memPraCarCustomVerse', FileType::class)
             ->add('submit', SubmitType::class);
     }
 

@@ -198,6 +198,36 @@ class Order
      */
     private $remPorSpecialInstructions;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarQuantity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarStyle;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarVerse;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarInk;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarPaper;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memPraCarCustomVerse;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -631,6 +661,78 @@ class Order
     public function setRemPorSpecialInstructions(?string $remPorSpecialInstructions): self
     {
         $this->remPorSpecialInstructions = $remPorSpecialInstructions;
+
+        return $this;
+    }
+
+    public function getMemPraCarQuantity(): ?string
+    {
+        return $this->memPraCarQuantity;
+    }
+
+    public function setMemPraCarQuantity(?string $memPraCarQuantity): self
+    {
+        $this->memPraCarQuantity = $memPraCarQuantity;
+
+        return $this;
+    }
+
+    public function getMemPraCarStyle(): ?string
+    {
+        return $this->memPraCarStyle;
+    }
+
+    public function setMemPraCarStyle(?string $memPraCarStyle): self
+    {
+        $this->memPraCarStyle = $memPraCarStyle;
+
+        return $this;
+    }
+
+    public function getMemPraCarVerse(): ?string
+    {
+        return $this->memPraCarVerse;
+    }
+
+    public function setMemPraCarVerse(?string $memPraCarVerse): self
+    {
+        $this->memPraCarVerse = $memPraCarVerse;
+
+        return $this;
+    }
+
+    public function getMemPraCarInk(): ?string
+    {
+        return $this->memPraCarInk;
+    }
+
+    public function setMemPraCarInk(?string $memPraCarInk): self
+    {
+        $this->memPraCarInk = $memPraCarInk;
+
+        return $this;
+    }
+
+    public function getMemPraCarPaper(): ?string
+    {
+        return $this->memPraCarPaper;
+    }
+
+    public function setMemPraCarPaper(?string $memPraCarPaper): self
+    {
+        $this->memPraCarPaper = $memPraCarPaper;
+
+        return $this;
+    }
+
+    public function getMemPraCarCustomVerse(): ?string
+    {
+        return $this->memPraCarCustomVerse;
+    }
+
+    public function setMemPraCarCustomVerse(?string $memPraCarCustomVerse): self
+    {
+        $this->memPraCarCustomVerse = $memPraCarCustomVerse;
 
         return $this;
     }

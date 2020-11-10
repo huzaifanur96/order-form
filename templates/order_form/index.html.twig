@@ -329,7 +329,61 @@
               {{ form_widget(form.remPorSpecialInstructions, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
             </div>
           </div>
+        </div>
 
+        {# memorial prayer cards #}
+        <div>
+          <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Memorial Prayer Cards</h3>
+          {# quantity ... paper #}
+          <div class="flex flex-wrap">
+            {# Quantity #}
+            <div class="w-full px-3 md:w-1/5 relative">
+              {{ form_label(form.memPraCarQuantity, 'Quantity', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarQuantity, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            {# Style #}
+            <div class="w-full px-3 md:w-1/5 relative">
+              {{ form_label(form.memPraCarStyle, 'Style', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarStyle, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            {#  Verse #}
+            <div class="w-full px-3 md:w-1/5 relative">
+              {{ form_label(form.memPraCarVerse, '  Verse', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarVerse, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            {# Ink #}
+            <div class="w-full px-3 md:w-1/5 relative">
+              {{ form_label(form.memPraCarInk, 'Ink', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarInk, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            {# Paper#}
+            <div class="w-full px-3 md:w-1/5 relative">
+              {{ form_label(form.memPraCarPaper, 'Paper', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarPaper, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+          </div>
+          {# custom verse #}
+          <div class="flex wrap">
+            <div class="w-full px-3 md:w-1/2">
+              {{ form_label(form.memPraCarCustomVerse, 'Custom Verse', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memPraCarCustomVerse, {'attr': {'class': 'appearance-none block w-full text-gray-700 py-2 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
         </div>
 
 
