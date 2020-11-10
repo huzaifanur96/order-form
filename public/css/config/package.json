@@ -1,0 +1,23 @@
+{
+  "name": "form.crosstown.press",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/vyom_vyapar/form.crosstown.press.git"
+  },
+  "author": "Akash Kumar Sharma <vyom@vyom.site>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/vyom_vyapar/form.crosstown.press/issues"
+  },
+  "homepage": "https://gitlab.com/vyom_vyapar/form.crosstown.press#readme",
+  "dependencies": {
+    "autoprefixer": "^10.0.1",
+    "tailwindcss": "^1.9.5"
+  }
+}
