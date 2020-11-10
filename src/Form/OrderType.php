@@ -7,6 +7,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
+use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -109,6 +110,18 @@ class OrderType extends AbstractType
                 ]
             ])
             ->add('retAddImpZip', TextType::class)
+            ->add('remPorStyle', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('remPorSize', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1'
+                ]
+            ])
+            ->add('remPorPhoto', FileType::class)
+            ->add('remPorSpecialInstructions', TextareaType::class)
             ->add('submit', SubmitType::class);
     }
 

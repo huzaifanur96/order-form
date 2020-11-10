@@ -178,6 +178,26 @@ class Order
      */
     private $retAddImpZip;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $remPorStyle;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $remPorSize;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $remPorPhoto;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $remPorSpecialInstructions;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -563,6 +583,54 @@ class Order
     public function setRetAddImpZip(?string $retAddImpZip): self
     {
         $this->retAddImpZip = $retAddImpZip;
+
+        return $this;
+    }
+
+    public function getRemPorStyle(): ?string
+    {
+        return $this->remPorStyle;
+    }
+
+    public function setRemPorStyle(?string $remPorStyle): self
+    {
+        $this->remPorStyle = $remPorStyle;
+
+        return $this;
+    }
+
+    public function getRemPorSize(): ?string
+    {
+        return $this->remPorSize;
+    }
+
+    public function setRemPorSize(?string $remPorSize): self
+    {
+        $this->remPorSize = $remPorSize;
+
+        return $this;
+    }
+
+    public function getRemPorPhoto(): ?string
+    {
+        return $this->remPorPhoto;
+    }
+
+    public function setRemPorPhoto(?string $remPorPhoto): self
+    {
+        $this->remPorPhoto = $remPorPhoto;
+
+        return $this;
+    }
+
+    public function getRemPorSpecialInstructions(): ?string
+    {
+        return $this->remPorSpecialInstructions;
+    }
+
+    public function setRemPorSpecialInstructions(?string $remPorSpecialInstructions): self
+    {
+        $this->remPorSpecialInstructions = $remPorSpecialInstructions;
 
         return $this;
     }
