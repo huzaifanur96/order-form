@@ -7,7 +7,7 @@
 {% block body %}
   <div class="container mx-auto">
     {# header #}
-    <!-- BETA tag -->
+    {# BETA tag #}
     <div class="mt-2 mb-8 text-right">
       <small style="background-color:#f8fafc; opacity: 72%;"
         class="border-2 rounded-xl border-gray-200 text-xs text-gray-700 px-3 py-1">
@@ -26,9 +26,9 @@
     {# overall form errors #}
     {{ form_errors(form) }}
 
-    <!-- Priliminary information -->
+    {# Priliminary information #}
     <div>
-      <!-- funeral home -->
+      {# funeral home #}
       <div id="funeral-home">
         {# Name, Contact, Date #}
         <div class="flex flex-wrap">
@@ -48,7 +48,7 @@
             {{ form_widget(form.funeralHomeDate, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
           </div>
         </div>
-        <!-- street -->
+        {# street #}
         <div class="flex">
           <div class="w-full px-3">
           {{ form_label(form.funeralHomeStreet, 'Street', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
@@ -93,6 +93,33 @@
           <div class="w-full md:w-1/2 px-3">
             {{ form_label(form.funeralHomeShipMerchandiseTo, 'ShipMerchandiseTo', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
             {{ form_widget(form.funeralHomeShipMerchandiseTo) }}
+          </div>
+        </div>
+
+        {# separator #}
+        <hr class="mb-4 mt-4 mx-3" />
+
+        {# Deceased information #}
+        <div>
+          {# Full Name of deceased #}
+          <div class="flex flex-wrap">
+            <div class="w-full px-3">
+              {{ form_label(form.fullNameOfDeceased, 'Full Name of Deceased', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.fullNameOfDeceased, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+          {# Deceased date of birth, date of death #}
+          <div class="flex flex-wrap">
+            {# DeceasedDateOfBirth #}
+            <div class="w-full md:w-1/2 px-3">
+              {{ form_label(form.deceasedDateOfBirth, 'Date of Birth', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.deceasedDateOfBirth, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gra<div class="flex flex-wrap">y-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+            {#  DeceasedDateOfDeath #}
+            <div class="w-full md:w-1/2 px-3">
+              {{ form_label(form.deceasedDateOfDeath, 'Date of Death', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.deceasedDateOfDeath, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
           </div>
         </div>
 

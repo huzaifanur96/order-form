@@ -42,6 +42,27 @@ class OrderType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
             ])
+            ->add('fullNameOfDeceased', TextType::class)
+            ->add('deceasedDateOfBirth', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('deceasedDateOfDeath', DateType::class, [
+                'widget' => 'single_text',
+            ])
+            ->add('deceasedIntermentInformation', TextType::class)
+            ->add('familyContactName', TextType::class)
+            ->add('familyContactStreet', TextType::class)
+            ->add('familyContactCity', TextType::class)
+            ->add('familyContactState', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                    'State 2' => 'State 2',
+                    'State 3' => 'State 3',
+                ],
+            ])
+            ->add('familyContactZip', TextType::class)
+            ->add('familyContactTelephone', TextType::class)
+            ->add('familyContactEmail', TextType::class)
             ->add('submit', SubmitType::class)
         ;
     }
