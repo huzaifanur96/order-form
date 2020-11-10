@@ -123,6 +123,61 @@ class Order
      */
     private $familyContactEmail;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckQuantity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckSentiment;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckFont;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckFontInk;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckMotif;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckMotifInk;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $symAckPaper;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retAddImpStreet;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retAddImpCity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retAddImpState;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $retAddImpZip;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -376,6 +431,138 @@ class Order
     public function setFamilyContactEmail(?string $familyContactEmail): self
     {
         $this->familyContactEmail = $familyContactEmail;
+
+        return $this;
+    }
+
+    public function getSymAckQuantity(): ?string
+    {
+        return $this->symAckQuantity;
+    }
+
+    public function setSymAckQuantity(?string $symAckQuantity): self
+    {
+        $this->symAckQuantity = $symAckQuantity;
+
+        return $this;
+    }
+
+    public function getSymAckSentiment(): ?string
+    {
+        return $this->symAckSentiment;
+    }
+
+    public function setSymAckSentiment(?string $symAckSentiment): self
+    {
+        $this->symAckSentiment = $symAckSentiment;
+
+        return $this;
+    }
+
+    public function getSymAckFont(): ?string
+    {
+        return $this->symAckFont;
+    }
+
+    public function setSymAckFont(?string $symAckFont): self
+    {
+        $this->symAckFont = $symAckFont;
+
+        return $this;
+    }
+
+    public function getSymAckFontInk(): ?string
+    {
+        return $this->symAckFontInk;
+    }
+
+    public function setSymAckFontInk(?string $symAckFontInk): self
+    {
+        $this->symAckFontInk = $symAckFontInk;
+
+        return $this;
+    }
+
+    public function getSymAckMotif(): ?string
+    {
+        return $this->symAckMotif;
+    }
+
+    public function setSymAckMotif(?string $symAckMotif): self
+    {
+        $this->symAckMotif = $symAckMotif;
+
+        return $this;
+    }
+
+    public function getSymAckMotifInk(): ?string
+    {
+        return $this->symAckMotifInk;
+    }
+
+    public function setSymAckMotifInk(?string $symAckMotifInk): self
+    {
+        $this->symAckMotifInk = $symAckMotifInk;
+
+        return $this;
+    }
+
+    public function getSymAckPaper(): ?string
+    {
+        return $this->symAckPaper;
+    }
+
+    public function setSymAckPaper(?string $symAckPaper): self
+    {
+        $this->symAckPaper = $symAckPaper;
+
+        return $this;
+    }
+
+    public function getRetAddImpStreet(): ?string
+    {
+        return $this->retAddImpStreet;
+    }
+
+    public function setRetAddImpStreet(?string $retAddImpStreet): self
+    {
+        $this->retAddImpStreet = $retAddImpStreet;
+
+        return $this;
+    }
+
+    public function getRetAddImpCity(): ?string
+    {
+        return $this->retAddImpCity;
+    }
+
+    public function setRetAddImpCity(?string $retAddImpCity): self
+    {
+        $this->retAddImpCity = $retAddImpCity;
+
+        return $this;
+    }
+
+    public function getRetAddImpState(): ?string
+    {
+        return $this->retAddImpState;
+    }
+
+    public function setRetAddImpState(?string $retAddImpState): self
+    {
+        $this->retAddImpState = $retAddImpState;
+
+        return $this;
+    }
+
+    public function getRetAddImpZip(): ?string
+    {
+        return $this->retAddImpZip;
+    }
+
+    public function setRetAddImpZip(?string $retAddImpZip): self
+    {
+        $this->retAddImpZip = $retAddImpZip;
 
         return $this;
     }
