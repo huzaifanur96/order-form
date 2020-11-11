@@ -163,6 +163,20 @@ class OrderType extends AbstractType
                 ],
             ])
             ->add('memBookObiObituaryFile', FileType::class)
+            ->add('donCarEnvQuantity', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('donCarEnvDonationInformation', TextAreaType::class)
+            ->add('donCarEnvStreet', TextType::class)
+            ->add('donCarEnvCity', TextType::class)
+            ->add('donCarEnvState', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('donCarEnvZip', TextType::class)
             ->add('submit', SubmitType::class);
     }
 

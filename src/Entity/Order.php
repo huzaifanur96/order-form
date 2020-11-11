@@ -248,6 +248,36 @@ class Order
      */
     private $memBookObiObituaryFile;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $donCarEnvQuantity;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $donCarEnvDonationInformation;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $donCarEnvStreet;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $donCarEnvCity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $donCarEnvState;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $donCarEnvZip;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -801,6 +831,78 @@ class Order
     public function setMemBookObiObituaryFile(?string $memBookObiObituaryFile): self
     {
         $this->memBookObiObituaryFile = $memBookObiObituaryFile;
+
+        return $this;
+    }
+
+    public function getDonCarEnvQuantity(): ?string
+    {
+        return $this->donCarEnvQuantity;
+    }
+
+    public function setDonCarEnvQuantity(?string $donCarEnvQuantity): self
+    {
+        $this->donCarEnvQuantity = $donCarEnvQuantity;
+
+        return $this;
+    }
+
+    public function getDonCarEnvDonationInformation(): ?string
+    {
+        return $this->donCarEnvDonationInformation;
+    }
+
+    public function setDonCarEnvDonationInformation(string $donCarEnvDonationInformation): self
+    {
+        $this->donCarEnvDonationInformation = $donCarEnvDonationInformation;
+
+        return $this;
+    }
+
+    public function getDonCarEnvStreet(): ?string
+    {
+        return $this->donCarEnvStreet;
+    }
+
+    public function setDonCarEnvStreet(?string $donCarEnvStreet): self
+    {
+        $this->donCarEnvStreet = $donCarEnvStreet;
+
+        return $this;
+    }
+
+    public function getDonCarEnvCity(): ?string
+    {
+        return $this->donCarEnvCity;
+    }
+
+    public function setDonCarEnvCity(?string $donCarEnvCity): self
+    {
+        $this->donCarEnvCity = $donCarEnvCity;
+
+        return $this;
+    }
+
+    public function getDonCarEnvState(): ?string
+    {
+        return $this->donCarEnvState;
+    }
+
+    public function setDonCarEnvState(string $donCarEnvState): self
+    {
+        $this->donCarEnvState = $donCarEnvState;
+
+        return $this;
+    }
+
+    public function getDonCarEnvZip(): ?string
+    {
+        return $this->donCarEnvZip;
+    }
+
+    public function setDonCarEnvZip(?string $donCarEnvZip): self
+    {
+        $this->donCarEnvZip = $donCarEnvZip;
 
         return $this;
     }
