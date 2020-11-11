@@ -385,6 +385,43 @@
             </div>
           </div>
         </div>
+        <!-- memorial Bookmark Obituary -->
+        <div>
+          <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Memorial Bookmark Obituary
+          </h3>
+          <!-- quantity, paper, tassel, Obituary file -->
+          <div class="flex flex-wrap">
+            <!-- Quantity -->
+            <div class="w-full px-3 md:w-1/4 relative">
+              {{ form_label(form.memBookObiQuantity, 'Quantity', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memBookObiQuantity, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            <!-- Paper -->
+            <div class="w-full px-3 md:w-1/4 relative">
+              {{ form_label(form.memBookObiPaper, 'Paper', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memBookObiPaper, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            <!-- Tassel Color -->
+            <div class="w-full px-3 md:w-1/4 relative">
+              {{ form_label(form.memBookObiTasselColor, 'Tassel Color', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memBookObiTasselColor, {'attr': {'class': 'appearance-none block w-full bg-gray-100 text-gray-700 border border-gray-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white'}}) }}
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-6 pt-4 text-gray-700">
+                <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+              </div>
+            </div>
+            <!-- Obituary File -->
+            <div class="w-full px-3 md:w-1/4 relative">
+              {{ form_label(form.memBookObiObituaryFile, 'Obituary File', {'label_attr': {'class': 'block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2'}} ) }}
+              {{ form_widget(form.memBookObiObituaryFile, {'attr': {'class': 'appearance-none block w-full text-gray-700 py-2 leading-tight focus:outline-none focus:bg-white'}}) }}
+            </div>
+          </div>
+        </div>
 
 
       </div>

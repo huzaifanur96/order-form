@@ -13,7 +13,6 @@ use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Component\Validator\Constraints\Choice;
 
 class OrderType extends AbstractType
 {
@@ -69,85 +68,101 @@ class OrderType extends AbstractType
             ->add('symAckQuantity', ChoiceType::class, [
                 'choices' => [
                     '0' => '0',
-                    '25' => '25'
-                ]
+                    '25' => '25',
+                ],
             ])
             ->add('symAckSentiment', ChoiceType::class, [
                 'choices' => [
-                    'S-1' => 'S-1'
-                ]
+                    'S-1' => 'S-1',
+                ],
             ])
             ->add('symAckFont', ChoiceType::class, [
                 'choices' => [
-                    'F-1' => 'F-1'
-                ]
+                    'F-1' => 'F-1',
+                ],
             ])
             ->add('symAckFontInk', ChoiceType::class, [
                 'choices' => [
-                    'I-1' => 'I-1'
-                ]
+                    'I-1' => 'I-1',
+                ],
             ])
             ->add('symAckMotif', ChoiceType::class, [
                 'choices' => [
-                    'M-1' => 'M-1'
-                ]
+                    'M-1' => 'M-1',
+                ],
             ])
             ->add('symAckMotifInk', ChoiceType::class, [
                 'choices' => [
-                    'I-1' => 'I-1'
-                ]
+                    'I-1' => 'I-1',
+                ],
             ])
             ->add('symAckPaper', ChoiceType::class, [
                 'choices' => [
-                    'P-W White' => 'P-W White'
-                ]
+                    'P-W White' => 'P-W White',
+                ],
             ])
             ->add('retAddImpStreet', TextType::class)
             ->add('retAddImpCity', TextType::class)
             ->add('retAddImpState', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('retAddImpZip', TextType::class)
             ->add('remPorStyle', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('remPorSize', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('remPorPhoto', FileType::class)
             ->add('remPorSpecialInstructions', TextareaType::class)
             ->add('memPraCarQuantity', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('memPraCarStyle', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('memPraCarVerse', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('memPraCarInk', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('memPraCarPaper', ChoiceType::class, [
                 'choices' => [
-                    'State 1' => 'State 1'
-                ]
+                    'State 1' => 'State 1',
+                ],
             ])
             ->add('memPraCarCustomVerse', FileType::class)
+            ->add('memBookObiQuantity', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('memBookObiPaper', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('memBookObiTasselColor', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('memBookObiObituaryFile', FileType::class)
             ->add('submit', SubmitType::class);
     }
 

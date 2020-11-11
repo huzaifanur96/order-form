@@ -228,6 +228,26 @@ class Order
      */
     private $memPraCarCustomVerse;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memBookObiQuantity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memBookObiPaper;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memBookObiTasselColor;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $memBookObiObituaryFile;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -733,6 +753,54 @@ class Order
     public function setMemPraCarCustomVerse(?string $memPraCarCustomVerse): self
     {
         $this->memPraCarCustomVerse = $memPraCarCustomVerse;
+
+        return $this;
+    }
+
+    public function getMemBookObiQuantity(): ?string
+    {
+        return $this->memBookObiQuantity;
+    }
+
+    public function setMemBookObiQuantity(?string $memBookObiQuantity): self
+    {
+        $this->memBookObiQuantity = $memBookObiQuantity;
+
+        return $this;
+    }
+
+    public function getMemBookObiPaper(): ?string
+    {
+        return $this->memBookObiPaper;
+    }
+
+    public function setMemBookObiPaper(?string $memBookObiPaper): self
+    {
+        $this->memBookObiPaper = $memBookObiPaper;
+
+        return $this;
+    }
+
+    public function getMemBookObiTasselColor(): ?string
+    {
+        return $this->memBookObiTasselColor;
+    }
+
+    public function setMemBookObiTasselColor(?string $memBookObiTasselColor): self
+    {
+        $this->memBookObiTasselColor = $memBookObiTasselColor;
+
+        return $this;
+    }
+
+    public function getMemBookObiObituaryFile(): ?string
+    {
+        return $this->memBookObiObituaryFile;
+    }
+
+    public function setMemBookObiObituaryFile(?string $memBookObiObituaryFile): self
+    {
+        $this->memBookObiObituaryFile = $memBookObiObituaryFile;
 
         return $this;
     }
