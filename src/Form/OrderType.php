@@ -177,6 +177,18 @@ class OrderType extends AbstractType
                 ],
             ])
             ->add('donCarEnvZip', TextType::class)
+            ->add('funProQuantity', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('funProPaper', ChoiceType::class, [
+                'choices' => [
+                    'State 1' => 'State 1',
+                ],
+            ])
+            ->add('funProPhoto', FileType::class)
+            ->add('funProSpecialInstructions', TextareaType::class)
             ->add('submit', SubmitType::class);
     }
 

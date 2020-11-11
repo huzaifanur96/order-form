@@ -278,6 +278,26 @@ class Order
      */
     private $donCarEnvZip;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $funProQuantity;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $funProPaper;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $funProPhoto;
+
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $funProSpecialInstructions;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -903,6 +923,54 @@ class Order
     public function setDonCarEnvZip(?string $donCarEnvZip): self
     {
         $this->donCarEnvZip = $donCarEnvZip;
+
+        return $this;
+    }
+
+    public function getFunProQuantity(): ?string
+    {
+        return $this->funProQuantity;
+    }
+
+    public function setFunProQuantity(?string $funProQuantity): self
+    {
+        $this->funProQuantity = $funProQuantity;
+
+        return $this;
+    }
+
+    public function getFunProPaper(): ?string
+    {
+        return $this->funProPaper;
+    }
+
+    public function setFunProPaper(?string $funProPaper): self
+    {
+        $this->funProPaper = $funProPaper;
+
+        return $this;
+    }
+
+    public function getFunProPhoto(): ?string
+    {
+        return $this->funProPhoto;
+    }
+
+    public function setFunProPhoto(?string $funProPhoto): self
+    {
+        $this->funProPhoto = $funProPhoto;
+
+        return $this;
+    }
+
+    public function getFunProSpecialInstructions(): ?string
+    {
+        return $this->funProSpecialInstructions;
+    }
+
+    public function setFunProSpecialInstructions(string $funProSpecialInstructions): self
+    {
+        $this->funProSpecialInstructions = $funProSpecialInstructions;
 
         return $this;
     }
