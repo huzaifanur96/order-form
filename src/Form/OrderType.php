@@ -44,92 +44,133 @@ class OrderType extends AbstractType
                 'expanded' => true,
                 'multiple' => false,
             ])
-            ->add('fullNameOfDeceased', TextType::class)
+            ->add('fullNameOfDeceased', TextType::class, [
+                'required' => false,
+            ])
             ->add('deceasedDateOfBirth', DateType::class, [
                 'widget' => 'single_text',
+                'required' => false,
             ])
             ->add('deceasedDateOfDeath', DateType::class, [
                 'widget' => 'single_text',
+                'required' => false,
             ])
-            ->add('deceasedIntermentInformation', TextareaType::class)
-            ->add('familyContactName', TextType::class)
-            ->add('familyContactStreet', TextType::class)
-            ->add('familyContactCity', TextType::class)
+            ->add('deceasedIntermentInformation', TextareaType::class, [
+                'required' => false,
+            ])
+            ->add('familyContactName', TextType::class, [
+                'required' => false,
+            ])
+            ->add('familyContactStreet', TextType::class, [
+                'required' => false,
+            ])
+            ->add('familyContactCity', TextType::class, [
+                'required' => false,
+            ])
             ->add('familyContactState', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                     'State 2' => 'State 2',
                     'State 3' => 'State 3',
                 ],
+                'required' => false,
             ])
-            ->add('familyContactZip', TextType::class)
-            ->add('familyContactTelephone', TextType::class)
-            ->add('familyContactEmail', TextType::class)
+            ->add('familyContactZip', TextType::class, [
+                'required' => false,
+            ])
+            ->add('familyContactTelephone', TextType::class, [
+                'required' => false,
+            ])
+            ->add('familyContactEmail', TextType::class, [
+                'required' => false,
+            ])
             ->add('symAckQuantity', ChoiceType::class, [
                 'choices' => [
                     '0' => '0',
                     '25' => '25',
                 ],
+                'required' => false,
             ])
             ->add('symAckSentiment', ChoiceType::class, [
                 'choices' => [
                     'S-1' => 'S-1',
                 ],
+                'required' => false,
             ])
             ->add('symAckFont', ChoiceType::class, [
                 'choices' => [
                     'F-1' => 'F-1',
                 ],
+                'required' => false,
             ])
             ->add('symAckFontInk', ChoiceType::class, [
                 'choices' => [
                     'I-1' => 'I-1',
                 ],
+                'required' => false,
             ])
             ->add('symAckMotif', ChoiceType::class, [
                 'choices' => [
                     'M-1' => 'M-1',
                 ],
+                'required' => false,
             ])
             ->add('symAckMotifInk', ChoiceType::class, [
                 'choices' => [
                     'I-1' => 'I-1',
                 ],
+                'required' => false,
             ])
             ->add('symAckPaper', ChoiceType::class, [
                 'choices' => [
                     'P-W White' => 'P-W White',
                 ],
+                'required' => false,
             ])
-            ->add('retAddImpStreet', TextType::class)
-            ->add('retAddImpCity', TextType::class)
+            ->add('retAddImpStreet', TextType::class, [
+                'required' => false,
+            ])
+            ->add('retAddImpCity', TextType::class, [
+                'required' => false,
+            ])
             ->add('retAddImpState', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('retAddImpZip', TextType::class)
+            ->add('retAddImpZip', TextType::class, [
+                'required' => false,
+            ])
             ->add('remPorStyle', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('remPorSize', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('remPorPhoto', FileType::class)
-            ->add('remPorSpecialInstructions', TextareaType::class)
+            ->add('remPorPhoto', FileType::class, [
+                'required' => false,
+            ])
+            ->add('remPorSpecialInstructions', TextareaType::class, [
+                'required' => false,
+            ])
             ->add('memPraCarQuantity', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('memPraCarStyle', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('memPraCarVerse', ChoiceType::class, [
                 'choices' => [
@@ -140,55 +181,80 @@ class OrderType extends AbstractType
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('memPraCarPaper', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('memPraCarCustomVerse', FileType::class)
+            ->add('memPraCarCustomVerse', FileType::class, [
+                'required' => false,
+            ])
             ->add('memBookObiQuantity', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('memBookObiPaper', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('memBookObiTasselColor', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('memBookObiObituaryFile', FileType::class)
+            ->add('memBookObiObituaryFile', FileType::class, [
+                'required' => false,
+            ])
             ->add('donCarEnvQuantity', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('donCarEnvDonationInformation', TextAreaType::class)
-            ->add('donCarEnvStreet', TextType::class)
-            ->add('donCarEnvCity', TextType::class)
+            ->add('donCarEnvDonationInformation', TextAreaType::class, [
+                'required' => false,
+            ])
+            ->add('donCarEnvStreet', TextType::class, [
+                'required' => false,
+            ])
+            ->add('donCarEnvCity', TextType::class, [
+                'required' => false,
+            ])
             ->add('donCarEnvState', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('donCarEnvZip', TextType::class)
+            ->add('donCarEnvZip', TextType::class, [
+                'required' => false,
+            ])
             ->add('funProQuantity', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
             ->add('funProPaper', ChoiceType::class, [
                 'choices' => [
                     'State 1' => 'State 1',
                 ],
+                'required' => false,
             ])
-            ->add('funProPhoto', FileType::class)
-            ->add('funProSpecialInstructions', TextareaType::class)
+            ->add('funProPhoto', FileType::class, [
+                'required' => false,
+            ])
+            ->add('funProSpecialInstructions', TextareaType::class, [
+                'required' => false,
+            ])
             ->add('submit', SubmitType::class);
     }
 
