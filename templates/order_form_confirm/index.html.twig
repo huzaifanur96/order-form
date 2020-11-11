@@ -1,13 +1,545 @@
 {% extends 'base.html.twig' %}
 
 {% block title %}
-  Hello OrderFormSuccessController!
+  Order
 {% endblock %}
 
 {% block body %}
-  <div class="example-wrapper">
-    <h1>
-      Data saved successfully for {{ funeral_home_name }}
-    </h1>
-  </div>
+  <div class="container mx-auto">
+        <!-- BETA tag -->
+        <div class="mt-2 mb-8 text-right">
+            <small style="background-color:#f8fafc; opacity: 72%;" class="border-2 rounded-xl border-gray-200 text-xs text-gray-700 px-3">Beta</small>
+        </div>
+        <h1 class="text-5xl mt-6 text-center font-semibold text-gray-400">Honoring A Life</h1>
+        <h2 class="text-3xl text-center text-gray-400 ">Order Form</h2>
+        <h4 class="text-2xl text-center">Confirmation</h4>
+        <p class="text-xl text-center">Please confirm the details and submit the form</p>
+        <!-- separator -->
+        <hr class="mb-4 mt-4 mx-3" />
+
+        <!-- form response -->
+        <div class="mt-12">
+            <!-- Priliminary information -->
+            <div>
+                <!-- funeral home -->
+                <div id="funeral-home">
+                    <div class="flex flex-wrap">
+                        <div class="mt-6 w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-name">
+                                Funeral Home
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_name }}</p>
+                        </div>
+                        <!-- Contact -->
+                        <div class="mt-6 w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-contact">
+                                Contact
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_contact }}</p>
+                        </div>
+                        <!-- Date -->
+                        <div class="mt-6 w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-date">
+                                Date
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_date }}</p>
+                        </div>
+                    </div>
+                    <!-- street -->
+                    <div class="flex">
+                        <div class="mt-6 w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-street">
+                                Street
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_street }}</p>
+                        </div>
+                    </div>
+                    <!-- City, State, ZIP -->
+                    <div class="flex flex-wrap">
+                        <!-- City -->
+                        <div class="mt-6 w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-city">
+                                City
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_city }}</p>
+                        </div>
+                        <!-- State -->
+                        <div class="mt-6 w-full px-3 md:w-1/3 relative">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-state">
+                                State
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_state }}</p>
+                        </div>
+                        <!-- ZIP -->
+                        <div class="mt-6 w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-zip">
+                                ZIP
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_zip }}</p>
+                        </div>
+                    </div>
+                    <!-- Telephone, Email -->
+                    <div class="flex flex-wrap">
+                        <!-- Telephone -->
+                        <div class="mt-6 w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-telephone">
+                                Telephone
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_telephone }}</p>
+                        </div>
+                        <!-- Email -->
+                        <div class="mt-6 w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-email">
+                                Email
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ funeral_home_email }}</p>
+                        </div>
+                    </div>
+                    <!-- Ship Merchandise to -->
+                    <div class="flex flex-wrap">
+                        <div class="mt-6 w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-home-ship-merchandise-to">
+                                Ship Merchandise To
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">
+                                {{ funeral_home_ship_merchandise_to }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- separator -->
+                <hr class="mb-4 mt-4 mx-3" />
+                <!-- deceased information -->
+                <div>
+                    <!-- Full Name of Decesead -->
+                    <div class="flex">
+                        <div class="mt-6 w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="deceased-name">
+                                Full Name of Deceased
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ full_name_of_deceased }}</p>
+                        </div>
+                    </div>
+                    <!-- Date of Birth, Date of Death -->
+                    <div class="flex flex-wrap">
+                        <!-- Date of Birth -->
+                        <div class="mt-6 w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="deceased-date-of-birth">
+                                Date of Birth
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ deceased_date_of_birth }}</p>
+                        </div>
+                        <!-- Date of Death -->
+                        <div class="mt-6 w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="deceased-date-of-death">
+                                Date of Death
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ deceased_date_of_death }}</p>
+                        </div>
+                    </div>
+                    <!-- Interment Information -->
+                    <div class="flex">
+                        <div class="mt-6 w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="interment-information">
+                                Interment Information
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ deceased_interment_information }}</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- separator -->
+                <hr class="mb-4 mt-4 mx-3" />
+                <!-- family contact -->
+                <div>
+                    <!-- Name of Family Contact -->
+                    <div class="flex">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-name">
+                                Name of Family Contact
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_name }}</p>
+                        </div>
+                    </div>
+                    <!-- street -->
+                    <div class="flex">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-street">
+                                Street
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_street }}</p>
+                        </div>
+                    </div>
+                    <!-- City, State, ZIP -->
+                    <div class="flex flex-wrap">
+                        <!-- City -->
+                        <div class="w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-city">
+                                City
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_city }}</p>
+                        </div>
+                        <!-- State -->
+                        <div class="w-full px-3 md:w-1/3 relative">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-state">
+                                State
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_state }}</p>
+                        </div>
+                        <!-- ZIP -->
+                        <div class="w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-zip">
+                                ZIP
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_zip }}</p>
+                        </div>
+                    </div>
+                    <!-- Telephone, Email -->
+                    <div class="flex flex-wrap">
+                        <!-- Telephone -->
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-telephone">
+                                Telephone
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_telephone }}</p>
+                        </div>
+                        <!-- Email -->
+                        <div class="w-full md:w-1/2 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="family-contact-email">
+                                Email
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ family_contact_email }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Sympathy acknowledgements -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Sympathy Acknowledgements
+                </h3>
+                <!-- Quantity, sentiment -->
+                <div class="flex flex-wrap">
+                    <!-- quantity -->
+                    <div class="w-full px-3 md:w-1/2 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-quantity">
+                            Quantity
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_quantity }}</p>
+                    </div>
+                    <!-- Sentiment -->
+                    <div class="w-full px-3 md:w-1/2 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-sentiment">
+                            Sentiment
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_sentiment }}</p>
+                    </div>
+                </div>
+                <!-- Font, ink, motif, ink, paper -->
+                <div class="flex flex-wrap">
+                    <!-- Font -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-font">
+                            Font
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_font }}</p>
+                    </div>
+                    <!-- Font ink -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-font-ink">
+                            Font Ink
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_font_ink }}</p>
+                    </div>
+                    <!-- Motif -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-motif">
+                            Motif
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_motif }}</p>
+                    </div>
+                    <!-- Motif ink -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-motif-ink">
+                            Motif Ink
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_motif_ink }}</p>
+                    </div>
+                    <!-- Paper -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-paper">
+                            Paper
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ sym_ack_paper }}</p>
+                    </div>
+                </div>
+                <!-- return address imprint -->
+                <div>
+                    <label class="mt-2 px-3 block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2" for="return-address-imprint">
+                        Return Address Imprint
+                    </label>
+                    <!-- street -->
+                    <div class="flex">
+                        <div class="w-full px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-return-address-imprint-street">
+                                Street
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ ret_add_imp_street }}</p>
+                        </div>
+                    </div>
+                    <!-- City, State, ZIP -->
+                    <div class="flex flex-wrap">
+                        <!-- City -->
+                        <div class="w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-return-address-imprint-city">
+                                City
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ ret_add_imp_city }}</p>
+                        </div>
+                        <!-- State -->
+                        <div class="w-full px-3 md:w-1/3 relative">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-return-address-imprint-state">
+                                State
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ ret_add_imp_state }}</p>
+                        </div>
+                        <!-- ZIP -->
+                        <div class="w-full md:w-1/3 px-3">
+                            <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="sympathy-acknowledgements-return-address-imprint-zip">
+                                ZIP
+                            </label>
+                            <p class="py-3 px-4 bg-gray-100">{{ ret_add_imp_zip }}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- REMEMBRANCE PORTRAITS -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Remembrance Portraits</h3>
+                <!-- Style, Size -->
+                <div class="flex flex-wrap">
+                    <!-- Style -->
+                    <div class="w-full px-3 md:w-1/3 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="remembrance-potrait-style">
+                            Style
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ rem_por_style }}</p>
+                    </div>
+                    <!-- Size -->
+                    <div class="w-full px-3 md:w-1/3 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="remembrance-potrait-size">
+                            Size
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ rem_por_size }}</p>
+                    </div>
+                    <!-- upload photo -->
+                    <div class="w-full px-3 md:w-1/3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="remembrance-potrait-photo">
+                            Photo
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100"><a href="{{ asset('uploads/files/' ~ rem_por_photo) }}">Download File</a></p>
+                    </div>
+                </div>
+                <!-- Special Instructions -->
+                <div class="flex">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="remembrance-potrait-special-instructions">
+                            Special Instructions
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ rem_por_special_instructions }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- memorial prayer cards -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Memorial Prayer Cards</h3>
+                <div class="flex flex-wrap">
+                    <!-- quantity -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-quantity">
+                            Quantity
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_pra_car_quantity }}</p>
+                    </div>
+                    <!-- Style -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-style">
+                            Style
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_pra_car_style }}</p>
+                    </div>
+                    <!-- Verse -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-verse">
+                            Verse
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_pra_car_verse }}</p>
+                    </div>
+                    <!-- ink -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-ink">
+                            Ink
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_pra_car_ink }}</p>
+                    </div>
+                    <!-- Paper -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-paper">
+                            Paper
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_pra_car_paper }}</p>
+                    </div>
+                </div>
+                <!-- Interment Information and custom verse -->
+                <div class="flex wrap">
+                    <!-- Custom Verse -->
+                    <div class="w-full px-3 md:w-1/2">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-prayer-card-custom-verse">
+                            Custom Verse
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100"><a href="{{ asset('uploads/files/' ~ mem_pra_car_custom_verse) }}">Download File</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- memorial Bookmark Obituary -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Memorial Bookmark Obituary
+                </h3>
+                <div class="flex flex-wrap">
+                    <!-- quantity -->
+                    <div class="w-full px-3 md:w-1/5 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-bookmark-obituary-quantity">
+                            Quantity
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_book_obi_quantity }}</p>
+                    </div>
+                    <!-- Paper -->
+                    <div class="w-full px-3 md:w-1/4 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-bookmark-obituary-paper">
+                            Paper
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_book_obi_paper }}</p>
+                    </div>
+                    <!-- Tassel Color -->
+                    <div class="w-full px-3 md:w-1/4 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-bookmark-obituary-tassel-color">
+                            Tassel Color
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ mem_book_obi_tassel_color }}</p>
+                    </div>
+                    <!-- upload obituary file -->
+                    <div class="w-full px-3 md:w-1/4">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="memorial-bookmark-obituary-file">
+                            Obituary file
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100"><a href="{{ asset('uploads/files/' ~ mem_book_obi_obituary_file) }}">Download File</a></p>
+                    </div>
+                </div>
+            </div>
+            <!-- Donation Cards With Envelopes -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Donation Cards With
+                    Envelopes</h3>
+                <!-- quantity -->
+                <div class="w-full px-3 relative">
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-quantity">
+                        Quantity
+                    </label>
+                    <p class="py-3 px-4 bg-gray-100">{{ don_car_env_quantity }}</p>
+                </div>
+                <!-- Donation Information -->
+                <div class="flex">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-information">
+                            Donation Information
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ don_car_env_donation_information }}</p>
+                    </div>
+                </div>
+                <!-- Recipient Address -->
+                <label class="px-3 block uppercase tracking-wide text-gray-500 text-xs font-bold mb-2" for="donation-cards-with-envelopes-recepient-address-street">
+                    Recipient Address
+                </label>
+                <!-- street -->
+                <div class="flex">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-recepient-address-street">
+                            Street
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ don_car_env_street }}</p>
+                    </div>
+                </div>
+                <!-- City, State, ZIP -->
+                <div class="flex flex-wrap">
+                    <!-- City -->
+                    <div class="w-full md:w-1/3 px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-recepient-address-city">
+                            City
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ don_car_env_city }}</p>
+                    </div>
+                    <!-- State -->
+                    <div class="w-full px-3 md:w-1/3 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-recepient-address-state">
+                            State
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ don_car_env_state }}</p>
+                    </div>
+                    <!-- ZIP -->
+                    <div class="w-full md:w-1/3 px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="donation-cards-with-envelopes-recepient-address-zip">
+                            ZIP
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ don_car_env_zip }}</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Funeral Programs -->
+            <div>
+                <h3 class="mb-2 text-3xl sm:text-2xl md:text-3xl mt-6 text-center font-bold">Funeral Programs</h3>
+                <div class="flex flex-wrap">
+                    <!-- quantity -->
+                    <div class="w-full px-3 md:w-1/3 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-programs-quantity">
+                            Quantity
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ fun_pro_quantity }}</p>
+                    </div>
+                    <!-- Paper -->
+                    <div class="w-full px-3 md:w-1/3 relative">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-programs-paper">
+                            Paper
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ fun_pro_paper }}</p>
+                    </div>
+                    <!-- upload photo -->
+                    <div class="w-full px-3 md:w-1/3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-programs-upload-photo-and-copy">
+                            upload photo and copy
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100"><a href="{{ asset('uploads/files/' ~ fun_pro_photo) }}">Download File</a></p>
+                    </div>
+                </div>
+                <!-- Special Instructions -->
+                <div class="flex">
+                    <div class="w-full px-3">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="funeral-programs-special-instructions">
+                            Special Instructions
+                        </label>
+                        <p class="py-3 px-4 bg-gray-100">{{ fun_pro_special_instructions }}</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Thank you -->
+            <div class="mt-8">
+                <div class="text-right">
+                    <p class="py-3 px-4 bg-gray-100">Thank you</p>
+                </div>
+            </div>
+
+            <!-- separator -->
+            <hr class="mt-12 mb-4 mx-3" />
+            <!-- Footer -->
+            <footer class="mb-8 text-center"><small class="text-xs text-gray-700">2020 &copy; Crosstown Press, Inc.</small>
+            </footer>
+        </div>
 {% endblock %}

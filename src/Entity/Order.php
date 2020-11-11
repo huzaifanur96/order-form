@@ -872,7 +872,7 @@ class Order
         return $this->donCarEnvDonationInformation;
     }
 
-    public function setDonCarEnvDonationInformation(string $donCarEnvDonationInformation): self
+    public function setDonCarEnvDonationInformation(?string $donCarEnvDonationInformation): self
     {
         $this->donCarEnvDonationInformation = $donCarEnvDonationInformation;
 
@@ -908,7 +908,7 @@ class Order
         return $this->donCarEnvState;
     }
 
-    public function setDonCarEnvState(string $donCarEnvState): self
+    public function setDonCarEnvState(?string $donCarEnvState): self
     {
         $this->donCarEnvState = $donCarEnvState;
 
@@ -968,7 +968,7 @@ class Order
         return $this->funProSpecialInstructions;
     }
 
-    public function setFunProSpecialInstructions(string $funProSpecialInstructions): self
+    public function setFunProSpecialInstructions(?string $funProSpecialInstructions): self
     {
         $this->funProSpecialInstructions = $funProSpecialInstructions;
 

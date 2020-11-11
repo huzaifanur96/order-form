@@ -5,16 +5,18 @@ namespace App\Controller;
 use App\Entity\Order;
 use App\Form\OrderType;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\File\Exception\FileException;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Component\String\Slugger\SluggerInterface;
 
 class OrderController extends AbstractController
 {
     /**
      * @Route("/", name="order")
      */
-    public function index(Request $request): Response
+    public function index(Request $request, SluggerInterface $slugger): Response
     {
         // create the form
         $order = new Order;
@@ -75,24 +77,91 @@ class OrderController extends AbstractController
             // Remembrance Portrait
             $order->setremPorStyle($order_form_data->getremPorStyle());
             $order->setremPorSize($order_form_data->getremPorSize());
-            $order->setremPorPhoto($order_form_data->getremPorPhoto());
+            $remPorPhotoFile = $form->get('remPorPhoto')->getData();
+            if ($remPorPhotoFile) {
+
+                // get file name
+                $getremPorPhotoOriginalFileName = pathinfo($remPorPhotoFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // purify the file name
+                $remPorPhotoSafeFileName = $slugger->slug($getremPorPhotoOriginalFileName);
+                // create unique pure filename
+                $remPorPhotoNewFileName = $remPorPhotoSafeFileName . '-' . uniqid() . '.' . $remPorPhotoFile->guessExtension();
+
+                // Move the file to permanent location
+                try {
+                    $remPorPhotoFile->move(
+                        $this->getParameter('file_upload_directory'),
+                        $remPorPhotoNewFileName
+                    );
+                } catch (FileException $e) {
+                    // TODO: Add file exception
+                }
+
+                // Persist file information
+                $order->setRemPorPhoto($remPorPhotoNewFileName);
+            }
             $order->setremPorSpecialInstructions($order_form_data->getremPorSpecialInstructions());
-            
+
             // Memorial prayer cards
             $order->setMemPraCarQuantity($order_form_data->getMemPraCarQuantity());
             $order->setMemPraCarStyle($order_form_data->getMemPraCarStyle());
             $order->setMemPraCarVerse($order_form_data->getMemPraCarVerse());
             $order->setMemPraCarInk($order_form_data->getMemPraCarInk());
             $order->setMemPraCarPaper($order_form_data->getMemPraCarPaper());
-            $order->setMemPraCarCustomVerse($order_form_data->getMemPraCarCustomVerse());
+            // $order->setMemPraCarCustomVerse($order_form_data->getMemPraCarCustomVerse());
+            $memPraCarCustomVerseFile = $form->get('memPraCarCustomVerse')->getData();
+            if ($memPraCarCustomVerseFile) {
+
+                // get file name
+                $memPraCarCustomVerseFileName = pathinfo($memPraCarCustomVerseFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // purify the file name
+                $memPraCarCustomVerseSafeFileName = $slugger->slug($memPraCarCustomVerseFileName);
+                // create unique pure filename
+                $memPraCarCustomVerseNewFileName = $memPraCarCustomVerseSafeFileName . '-' . uniqid() . '.' . $memPraCarCustomVerseFile->guessExtension();
+
+                // Move the file to permanent location
+                try {
+                    $memPraCarCustomVerseFile->move(
+                        $this->getParameter('file_upload_directory'),
+                        $memPraCarCustomVerseNewFileName
+                    );
+                } catch (FileException $e) {
+                    // TODO: Add file exception
+                }
+
+                // Persist file information
+                $order->setMemPraCarCustomVerse($memPraCarCustomVerseNewFileName);
+            }
 
             // Memorial Bookmark Obituary
             $order->setMemBookObiQuantity($order_form_data->getMemBookObiQuantity());
             $order->setMemBookObiPaper($order_form_data->getMemBookObiPaper());
             $order->setMemBookObiTasselColor($order_form_data->getMemBookObiTasselColor());
-            $order->setMemBookObiObituaryFile($order_form_data->getMemBookObiObituaryFile());
+            $memBookObiObituaryFile = $form->get('memBookObiObituaryFile')->getData();
+            if ($memBookObiObituaryFile) {
 
-            // Donation Cards With Envelopes 
+                // get file name
+                $memBookObiObituaryFileName = pathinfo($memBookObiObituaryFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // purify the file name
+                $memBookObiObituarySafeFileName = $slugger->slug($memBookObiObituaryFileName);
+                // create unique pure filename
+                $memBookObiObituaryNewFileName = $memBookObiObituarySafeFileName . '-' . uniqid() . '.' . $memBookObiObituaryFile->guessExtension();
+
+                // Move the file to permanent location
+                try {
+                    $memBookObiObituaryFile->move(
+                        $this->getParameter('file_upload_directory'),
+                        $memBookObiObituaryNewFileName
+                    );
+                } catch (FileException $e) {
+                    // TODO: Add file exception
+                }
+
+                // Persist file information
+                $order->setMemBookObiObituaryFile($memBookObiObituaryNewFileName);
+            }
+
+            // Donation Cards With Envelopes
             $order->setDonCarEnvQuantity($order_form_data->getDonCarEnvQuantity());
             $order->setDonCarEnvDonationInformation($order_form_data->getDonCarEnvDonationInformation());
             $order->setDonCarEnvStreet($order_form_data->getDonCarEnvStreet());
@@ -103,9 +172,33 @@ class OrderController extends AbstractController
             // Funeral Programs
             $order->setFunProQuantity($order_form_data->getFunProQuantity());
             $order->setFunProPaper($order_form_data->getFunProPaper());
-            $order->setFunProPhoto($order_form_data->getFunProPhoto());
-            $order->setFunProSpecialInstructions($order_form_data->getFunProSpecialInstructions());
+            // $order->setFunProPhoto($order_form_data->getFunProPhoto());
 
+            $funProPhotoFile = $form->get('funProPhoto')->getData();
+            if ($funProPhotoFile) {
+
+                // get file name
+                $funProPhotoFileName = pathinfo($funProPhotoFile->getClientOriginalName(), PATHINFO_FILENAME);
+                // purify the file name
+                $funProPhotoSafeFileName = $slugger->slug($funProPhotoFileName);
+                // create unique pure filename
+                $funProPhotoNewFileName = $funProPhotoSafeFileName . '-' . uniqid() . '.' . $funProPhotoFile->guessExtension();
+
+                // Move the file to permanent location
+                try {
+                    $funProPhotoFile->move(
+                        $this->getParameter('file_upload_directory'),
+                        $funProPhotoNewFileName
+                    );
+                } catch (FileException $e) {
+                    // TODO: Add file exception
+                }
+
+                // Persist file information
+                $order->setFunProPhoto($funProPhotoNewFileName);
+            }
+
+            $order->setFunProSpecialInstructions($order_form_data->getFunProSpecialInstructions());
 
             // Persist data
             $entityManager = $this->getDoctrine()->getManager();
